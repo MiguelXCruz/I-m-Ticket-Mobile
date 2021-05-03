@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_home"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="I'm Ticket"
+        android:textAlignment="center"
+        android:textColor="#1012B6"
+        android:textSize="46sp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Recuperar senha"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="46sp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icons8_ticket_127px" />
+
+    <EditText
+        android:id="@+id/etemailRS"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:drawableLeft="@drawable/icons8_mail_16px"
+        android:hint="Seu Email"
+        android:selectAllOnFocus="true"/>
+
+
+    <Button
+        android:id="@+id/btRecuperarRS"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/button_rounded"
+        android:textColor="@color/white"
+        android:text="Recuperar"
+        tools:ignore="MissingConstraints"
+        app:backgroundTint="#073153"
+        />
+
+</LinearLayout>
+
+

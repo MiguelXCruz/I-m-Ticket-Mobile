@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_home">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvNomePartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Nome da Partida]"
+                android:textSize="35dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tvDataPartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Data da Partida]"
+                android:textSize="25dp"
+                android:layout_marginTop="35dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tvhorarioPartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Horario da Partida]"
+                android:textSize="25dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tvSetorPartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Setor]"
+                android:textSize="25dp"
+                android:layout_marginTop="45dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tvCadeiraPartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Cadeira]"
+                android:textSize="25dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tvValorPartidaIngressoDetalhado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Valor]"
+                android:textSize="25dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/qrcode" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:background="#073153"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+        <ImageView
+            android:id="@+id/ivCarrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_shopping_cart_40px_1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="18dp"/>
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_home_40px"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="130dp"/>
+
+        <ImageView
+            android:id="@+id/ivperfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_user_40px"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="120dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

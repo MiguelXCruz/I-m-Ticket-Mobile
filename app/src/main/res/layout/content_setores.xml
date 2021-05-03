@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_home"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNomePartidaSetores"
+        android:layout_marginTop="20dp"
+        android:text="[Partida]"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/estadio" />
+
+    <Button
+        android:id="@+id/btSuperiorEsquerdo3"
+        android:layout_width="58dp"
+        android:layout_height="520dp"
+        android:layout_marginLeft="-390dp"
+        android:layout_marginTop="90dp"
+        android:background="@android:color/transparent"
+        />
+
+    <Button
+        android:id="@+id/btInferiorEsquerdo1"
+        android:layout_width="28dp"
+        android:layout_height="225dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="110dp"
+        android:background="@android:color/transparent" />
+
+    <Button
+        android:id="@+id/btInferiordireito2"
+        android:layout_width="28dp"
+        android:layout_height="225dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="110dp"
+        android:background="@android:color/transparent"
+         />
+
+    <Button
+        android:id="@+id/btSuperiorDireito4"
+        android:layout_width="59dp"
+        android:layout_height="520dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="98dp"
+        android:background="@android:color/transparent"
+        />
+
+
+    <Button
+        android:id="@+id/btVipDireito5"
+        android:layout_width="191dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="-289dp"
+        android:layout_marginTop="-138dp"
+        android:background="@android:color/transparent"
+        />
+
+    <Button
+        android:id="@+id/btVipEsquerdo6"
+        android:layout_width="197dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="-200dp"
+        android:layout_marginTop="342dp"
+        android:background="@android:color/transparent"
+        />
+
+
+</LinearLayout>
+
+
+
+</LinearLayout>

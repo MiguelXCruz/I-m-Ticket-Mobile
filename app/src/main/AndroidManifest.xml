@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.imticket">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".InformacoesApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ImTicket">
+        <activity android:name=".Mail"></activity>
+        <activity
+            android:name=".ResetActivity"
+            android:label="@string/title_activity_reset"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".IngressoDetalhado"
+            android:label="@string/title_activity_ingresso_detalhado"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".MeusIngressos"
+            android:label="@string/title_activity_meus_ingressos"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".EfetuarCompra"
+            android:label="@string/title_activity_dados_compra"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Setores_Comprar"
+            android:label="@string/title_activity_setores__comprar"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Setores"
+            android:label="@string/title_activity_setores"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".AlterarDados"
+            android:label="@string/title_activity_alterar_dados"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Carrinho"
+            android:label="@string/title_activity_carrinho"
+            android:noHistory="true"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".VisualizacaoDetalhada"
+            android:label="@string/title_activity_visualizacao_detalhada"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Perfil"
+            android:label="@string/title_activity_perfil"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Registro"
+            android:label="@string/title_activity_registro"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.ImTicket.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ImTicket.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

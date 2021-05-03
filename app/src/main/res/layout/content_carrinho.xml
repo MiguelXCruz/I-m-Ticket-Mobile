@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@drawable/bg_home"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carrinho"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="35dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCarrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llPreco"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preço total:"
+            android:layout_marginLeft="65dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$"
+            android:textSize="25dp"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvprecototal"
+            android:text="233"
+            android:layout_marginLeft="5dp"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btFinalizarCompra"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_rounded"
+        android:text="Finalizar compra"
+        android:textSize="15dp"
+        app:backgroundTint="@color/darkblue" />
+
+    <Button
+        android:id="@+id/btLimparCarrinho"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded"
+        android:text="Limpar Carrinho"
+        android:textSize="15dp"
+        app:backgroundTint="#00FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="37dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#073153"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/ivCarrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icons8_shopping_cart_40px_1" />
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icons8_home_40px" />
+
+        <ImageView
+            android:id="@+id/ivperfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/icons8_user_40px" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

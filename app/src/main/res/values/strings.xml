@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">I\'mTicket</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="title_activity_home">home</string>
+    <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_alterar_senha">AlterarSenhaActivity</string>
+    <string name="title_activity_alterar_email">AlterarEmailActivity</string>
+    <string name="title_activity_alterar_nome">AlterarNomeActivity</string>
+    <string name="title_activity_visualizacao_detalhada">VisualizacaoDetalhada</string>
+    <string name="title_activity_carrinho">Carrinho</string>
+    <string name="title_activity_formade_pagamento">FormadePagamento</string>
+    <string name="title_activity_alterar_dados">AlterarDados</string>
+    <string name="title_activity_historico_de_compras">historicoDeCompras</string>
+    <string name="title_activity_setores">Setores</string>
+    <string name="title_activity_setores__comprar">Setores_Comprar</string>
+    <string name="title_activity_dados_compra">DadosCompra</string>
+
+    <string-array name="estados">
+        <item>----------Selecionar----------</item>
+        <item> AC</item>
+        <item> AL</item>
+        <item> AP</item>
+        <item> AM</item>
+        <item> BA</item>
+        <item> CE</item>
+        <item> ES</item>
+        <item> GO</item>
+        <item> MA</item>
+        <item> MT</item>
+        <item> MS</item>
+        <item> MG</item>
+        <item> PA</item>
+        <item> PB</item>
+        <item> PR</item>
+        <item> PE</item>
+        <item> PI</item>
+        <item> RJ</item>
+        <item> RN</item>
+        <item> RS</item>
+        <item> RO</item>
+        <item> RR</item>
+        <item> SC</item>
+        <item> SP</item>
+        <item> SE</item>
+        <item> TO</item>
+        <item> DF</item>
+    </string-array>
+
+    <string-array name="operadoras">
+        <item>----------Selecionar----------</item>
+        <item>MasterCard</item>
+        <item>Visa</item>
+        <item>American Express</item>
+        <item>Hipercard</item>
+        <item>Elo</item>
+    </string-array>
+    <string name="title_activity_meus_ingressos">MeusIngressos</string>
+    <string name="title_activity_ingresso_detalhado">IngressoDetalhado</string>
+    <string name="title_activity_reset">ResetActivity</string>
+</resources>

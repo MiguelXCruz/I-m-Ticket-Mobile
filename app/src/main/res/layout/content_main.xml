@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="800dp"
+        android:contentDescription="todo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/index" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:gravity="center_horizontal"
+        android:text="I'm Ticket"
+        android:textAlignment="center"
+        android:textColor="#1012B6"
+        android:textSize="46sp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:text="Bem vindo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="500dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="558dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:backgroundTint="#073153"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btRegistro"
+        android:layout_width="500dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="618dp"
+        android:text="Registro"
+        android:textColor="@color/white"
+        app:backgroundTint="#073153"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+</RelativeLayout>

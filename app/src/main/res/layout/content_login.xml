@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_home"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="I'm Ticket"
+        android:textAlignment="center"
+        android:textColor="#1012B6"
+        android:textSize="46sp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="46sp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icons8_ticket_127px" />
+
+    <EditText
+        android:id="@+id/etemail"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/icons8_mail_16px"
+        android:hint="Seu Email"
+        android:selectAllOnFocus="true"/>
+
+    <EditText
+        android:id="@+id/etSenha"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/icons8_password_16px"
+        android:hint="Sua senha"
+        android:password="true"
+        android:selectAllOnFocus="true"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvEsqueceuasenha"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Esqueceu sua senha?"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+
+    <Button
+        android:id="@+id/btlogar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_rounded"
+        android:textColor="@color/white"
+        android:text="Login"
+        tools:ignore="MissingConstraints"
+        app:backgroundTint="#073153"
+        />
+
+    <TextView
+        android:id="@+id/tvRegistresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="25dp"
+        android:text="Não tem uma conta? Registre-se"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
+
+
+    <!-- android:background="#00009688"-->
