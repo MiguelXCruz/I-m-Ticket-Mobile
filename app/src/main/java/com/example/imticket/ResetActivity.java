@@ -1,7 +1,10 @@
 package com.example.imticket;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Address;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -13,20 +16,31 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Message;
-import android.se.omapi.Session;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import android.net.ConnectivityManager;
-import java.net.PasswordAuthentication;
+
 import java.util.Properties;
+
+import javax.mail.Address;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import adapter.PartidaAdapter;
 import controller.ConexaoController;
 import criptografia.Criptografia;
+
+import static javax.mail.internet.InternetAddress.*;
 
 public class ResetActivity extends AppCompatActivity {
 
@@ -54,6 +68,9 @@ public class ResetActivity extends AppCompatActivity {
 
                     String email = etemailRS.getText().toString();
 
+
+
+
                     Thread t = new Thread(){
                         @Override
                         public void run() {
@@ -68,7 +85,6 @@ public class ResetActivity extends AppCompatActivity {
                                     public void run() {
 
                                         enviaEmail(senha, email);
-                                        Toast.makeText(ResetActivity.this, "senha: " + senha, Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }else{
@@ -101,46 +117,109 @@ public class ResetActivity extends AppCompatActivity {
 
     private void enviaEmail(String senha, String email){
 
-    /*    //chamando telas para enviar o email
-        Intent it = new Intent(Intent.ACTION_SEND);
-        it.putExtra(it.EXTRA_EMAIL, email);
-        it.putExtra(it.EXTRA_SUBJECT, senha);
+        //inicializando as propriedades
 
-        it.setType("Messege/rfc822");
+        Properties properties = new Properties();
 
-        startActivity(it); */
-
-        /*
-            final String subject = "assunto do email";
-            final String body = "corpo do email do " + email;
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable","true");
+        properties.put("mail.smtp.host","smtp.gmail.com");
+        properties.put("mail.smtp.port","587");
 
 
-            new Thread(new Runnable(){
-                @Override
-                public void run() {
-                    Mail m = new Mail();
 
-                    String[] toArr = {email};
-                    m.setTo(toArr);
 
-                    //m.setFrom("seunome@seuemail.com.br"); //caso queira enviar em nome de outro
-                    m.setSubject(subject);
-                    m.setBody(body);
+        //inicializando sessão
 
-                    try {
-                        //m.addAttachment("pathDoAnexo");//anexo opcional
-                        m.send();
-                    }
-                    catch(RuntimeException rex){ }//erro ignorado
-                    catch(Exception e) {
-                        e.printStackTrace();
-                        System.exit(0);
-                    }
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("miguelxavier075@gmail.com","84473351m");
 
-                    Toast.makeText(getApplicationContext(), "Email enviado!", Toast.LENGTH_SHORT).show();
-                }
-            }).start();
+            }
+        });
+
+
+
+        try {
+            //inicializando conteudo do email
+
+            Message message = new MimeMessage(session);
+
+            message.setFrom(new InternetAddress("miguelxavier075@gmail.com"));
+
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+            message.setSubject("Solicitação de senha");
+
+            message.setText("Sua senha é: " + senha);
+
+
+            //enviando o email
+
+            new SendMail().execute(message);
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
-    */
+    }
+
+    private class SendMail extends AsyncTask <Message,String,String> {
+        private ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            //create and show progress dialog
+            progressDialog = ProgressDialog.show(ResetActivity.this, "Por favor Aguarde", "Enviando Email...",
+                    true, false);
+
+        }
+
+        @Override
+        protected String doInBackground(Message... messages) {
+
+            try {
+                // quando sucesso
+                Transport.send(messages[0]);
+                return "Success";
+            } catch (MessagingException e) {
+                // quando falho
+                e.printStackTrace();
+                return "Error";
+            }
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            //Dimiss progress dialog
+
+            progressDialog.dismiss();
+            if (s.equals("Sucess")){
+                //quando sucesso
+
+                // iniciando alertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(ResetActivity.this);
+                builder.setCancelable(false);
+                builder.setTitle(Html.fromHtml("<font color='#509324' >Sucesso</font>"));
+                builder.setMessage("Email enviado com sucesso!!");
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //fechando a tela
+                        dialog.dismiss();
+                        //limpando os ET's
+                        etemailRS.setText("");
+                    }
+                });
+                //mostrando o AlertDialog
+                builder.show();
+            }else{
+                //quando erro
+                Toast.makeText(getApplicationContext(),"Algo deu errado",Toast.LENGTH_SHORT);
+            }
+        }
     }
 }
