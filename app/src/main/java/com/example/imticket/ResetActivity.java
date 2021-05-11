@@ -47,6 +47,7 @@ public class ResetActivity extends AppCompatActivity {
     InformacoesApp informacoesApp;
     EditText etemailRS;
     Button btRecuperarRS;
+    private Object DialogInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,13 +77,16 @@ public class ResetActivity extends AppCompatActivity {
                         public void run() {
                             ConexaoController ccont = new ConexaoController(informacoesApp);
 
-                            String senha = Criptografia.descriptografar(ccont.usuarioRecuperarSenha(email));
+
+                            String senhaVerificar = ccont.usuarioRecuperarSenha(email);
 
 
-                            if(!senha.equals(" ")){
+                            if(!senhaVerificar.equals(" ")){
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+
+                                        String senha = Criptografia.descriptografar(senhaVerificar);
 
                                         enviaEmail(senha, email);
                                     }
@@ -91,7 +95,7 @@ public class ResetActivity extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(ResetActivity.this, "se fudeu", Toast.LENGTH_SHORT).show();
+                                        dialogoEmailInexistente();
                                     }
                                 });
 
@@ -115,6 +119,31 @@ public class ResetActivity extends AppCompatActivity {
 
     }
 
+    private void dialogoEmailInexistente() {
+        AlertDialog.Builder magbox = new AlertDialog.Builder(this);
+        magbox.setTitle("Email inexistente");
+        magbox.setIcon(android.R.drawable.ic_menu_delete);
+        magbox.setMessage("Esse email não possui uma conta cadastrada!!");
+        magbox.setPositiveButton("Criar uma nova conta", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(android.content.DialogInterface dialog, int which) {
+                Intent it = new Intent(ResetActivity.this, Registro.class);
+                startActivity(it);
+            }
+        });
+
+        magbox.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(android.content.DialogInterface dialog, int which) {
+                //fechando a tela
+                dialog.dismiss();
+                //limpando os ET's
+                etemailRS.setText("");
+            }
+        });
+        magbox.show();
+    }
+
     private void enviaEmail(String senha, String email){
 
         //inicializando as propriedades
@@ -134,8 +163,7 @@ public class ResetActivity extends AppCompatActivity {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("miguelxavier075@gmail.com","84473351m");
-
+                return new PasswordAuthentication("miguelxavier075@gmail.com","*******");
             }
         });
 
@@ -161,6 +189,7 @@ public class ResetActivity extends AppCompatActivity {
 
         } catch (MessagingException e) {
             e.printStackTrace();
+            Toast.makeText(this, "Algo deu errado aqui", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -173,6 +202,7 @@ public class ResetActivity extends AppCompatActivity {
             //create and show progress dialog
             progressDialog = ProgressDialog.show(ResetActivity.this, "Por favor Aguarde", "Enviando Email...",
                     true, false);
+
 
         }
 
@@ -197,7 +227,7 @@ public class ResetActivity extends AppCompatActivity {
             //Dimiss progress dialog
 
             progressDialog.dismiss();
-            if (s.equals("Sucess")){
+            if (s.equals("Success")){
                 //quando sucesso
 
                 // iniciando alertDialog
