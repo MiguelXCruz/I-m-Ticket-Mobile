@@ -126,7 +126,12 @@ public class Setores_Comprar extends AppCompatActivity {
 
             Ingresso ingresso = lstIngressos.get(position);
 
-           //------------------------------------------------
+            for (int x=0; x < informacoesApp.lstCarrinho.size(); x++){
+                if(informacoesApp.lstCarrinho.get(x).getIdingresso() ==  ingresso.getIdingresso()){
+                    Toast.makeText(Setores_Comprar.this, "Você não pode adicionar dois ingressos iguais!! Esse ingresso já está no carrinho", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
 
             informacoesApp.lstCarrinho.add(ingresso);
 

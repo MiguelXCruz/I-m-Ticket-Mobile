@@ -120,7 +120,7 @@ public class Carrinho extends AppCompatActivity {
             btFinalizarCompra.setVisibility(View.INVISIBLE);
 
 
-            // tv do preçooooo
+            // tv do preço
 
             llPreco.setVisibility(View.INVISIBLE);
             tvprecototal.setVisibility(View.INVISIBLE);
